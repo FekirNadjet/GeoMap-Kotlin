@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/map"
+    app:startDestination="@id/listePays">
+
+    <fragment
+        android:id="@+id/listePays"
+        android:name="com.example.projet.listePays"
+        android:label="fragment_liste_pays"
+        tools:layout="@layout/fragment_liste_pays" >
+        <action
+            android:id="@+id/actionDetailPays"
+            app:destination="@id/detailPays" />
+        <action
+            android:id="@+id/info_pays"
+            app:destination="@id/infoPays" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailPays"
+        android:name="com.example.projet.DetailPays"
+        android:label="fragment_detail_pays"
+        tools:layout="@layout/fragment_detail_pays" >
+        <action
+            android:id="@+id/actionRetour"
+            app:destination="@id/listePays" />
+        <argument
+            android:name="pays"
+            app:argType="integer"
+            android:defaultValue="0"
+
+            />
+
+    </fragment>
+    <fragment
+        android:id="@+id/infoPays"
+        android:name="com.example.projet.InfoPays"
+        android:label="fragment_info_pays"
+        tools:layout="@layout/fragment_info_pays">
+    <argument
+        app:argType="com.example.projet.data.Pays"
+        android:name="Pays"
+        app:nullable="true"
+        android:defaultValue="@null" />
+    </fragment>
+
+
+</navigation>
