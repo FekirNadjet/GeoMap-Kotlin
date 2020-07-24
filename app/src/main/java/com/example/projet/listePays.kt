@@ -53,7 +53,7 @@ class listePays : BaseFragment() {
         val pers3 = personalities( "Larbi Ben M'hidi", R.drawable.dz_arbi)
 
         var pers= listOf<personalities>(pers1,pers2,pers3)
-        val dz = Pays("DZ","Algeria","Algiers", descr, 2381741, 42972878,histoires1,ressources1, R.drawable.algerie_drapeau, slideAlgerie,R.raw.algerie,pers)
+        val dz = Pays("DZ","algeria","Algiers", descr, 2381741, 42972878,histoires1,ressources1, R.drawable.algerie_drapeau, slideAlgerie,R.raw.algerie,pers)
 
         val event6 = Historique( "Postwar growth and prosperity", "Shigeru Yoshida served as prime minister in 1946–1947 and 1948–1954, and played a key role in guiding Japan through the occupation.[292] His policies, known as the Yoshida Doctrine, proposed that Japan should forge a tight relationship with the United States and focus on developing the economy rather than pursuing a proactive foreign policy.[293] Yoshida was one of the longest serving prime ministers in Japanese history and the third-longest serving Prime Minister in Post-occupation Japan.[294] Yoshida's Liberal Party merged in 1955 into the new Liberal Democratic Party (LDP),[295] which went on to dominate Japanese politics for the remainder of the Shōwa period")
         val event4 = Historique( "Heisei period (1989–2019)", "Emperor Akihito's reign began upon the death of his father, Emperor Hirohito. The economic bubble popped in 1989, and stock and land prices plunged as Japan entered a deflationary spiral. Banks found themselves saddled with insurmountable debts that hindered economic recovery.[317] Stagnation worsened as the birthrate declined far below replacement level")
@@ -73,7 +73,7 @@ class listePays : BaseFragment() {
         val pers5 = personalities( "Satoshi Kon", R.drawable.jp_satoshi)
         var per= listOf<personalities>(pers4,pers5)
 
-        val jp = Pays("JP", "Japan", "Tokyo", descr2, 377975, 126150000,histoires2,ressources2, R.drawable.japon_drapeau,slideJapon,R.raw.suede,per)
+        val jp = Pays("JP", "japan", "Tokyo", descr2, 377975, 126150000,histoires2,ressources2, R.drawable.japon_drapeau,slideJapon,R.raw.suede,per)
 
 
         var pays= listOf<Pays>(dz,jp)

@@ -21,8 +21,8 @@
             android:id="@+id/action_video"
             app:destination="@id/videosFragment" />
         <action
-            android:id="@+id/pays_action"
-            app:destination="@id/viewpage" />
+            android:id="@+id/action_listePays_to_tweetsFragment"
+            app:destination="@id/tweetsFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailPays"
@@ -53,6 +53,9 @@
         <action
             android:id="@+id/info_video_action"
             app:destination="@id/videosFragment" />
+        <action
+            android:id="@+id/action_infoPays_to_tweetsFragment"
+            app:destination="@id/tweetsFragment" />
     </fragment>
     <fragment
         android:id="@+id/videosFragment"
@@ -66,10 +69,11 @@
         android:defaultValue="@null" />
     </fragment >
     <fragment
-        android:id="@+id/viewpage"
-        android:name="com.example.projet.viewpage"
-        android:label="fragment_viewpage"
-        tools:layout="@layout/fragment_viewpage" >
+        android:id="@+id/tweetsFragment"
+        android:name="com.example.projet.TweetsFragment"
+        android:label="fragment_tweets"
+        tools:layout="@layout/fragment_tweets">
+
     <argument
         app:argType="com.example.projet.data.Pays"
         android:name="Pays"

@@ -35,7 +35,6 @@ class PaysAdapters (private val pays:List<Pays>): RecyclerView.Adapter<PaysAdapt
         holder.view.arrowView.setOnClickListener{
 //            val action=listePaysDirections.actionVideo()
 //            Navigation.findNavController(it).navigate(action)
-
 //            val action=listePaysDirections.infoPays()
 //            action.pays=pays
 //            Navigation.findNavController(it).navigate(action)
@@ -43,6 +42,7 @@ class PaysAdapters (private val pays:List<Pays>): RecyclerView.Adapter<PaysAdapt
             val action=listePaysDirections.infoPays()
             action.pays=pays
             Navigation.findNavController(it).navigate(action)
+
 
         }
 

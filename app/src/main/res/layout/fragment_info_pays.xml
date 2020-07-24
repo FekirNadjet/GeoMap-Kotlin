@@ -65,11 +65,23 @@
                         android:text="Algiers" />
 
                     <Button
+                        android:id="@+id/tweetbutton"
+                        android:layout_width="80dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginLeft="154dp"
+                        android:layout_toEndOf="@+id/videobutton"
+                        android:background="@android:color/transparent"
+                        android:text="Tweets"
+                        android:textStyle="bold" />
+
+                    <Button
                         android:id="@+id/videobutton"
                         android:layout_width="80dp"
                         android:layout_height="50dp"
-                        android:layout_marginStart="154dp"
+                        android:layout_marginStart="3dp"
                         android:layout_marginLeft="154dp"
+                        android:layout_toEndOf="@+id/nomPays"
                         android:background="@android:color/transparent"
                         android:text="Videos"
                         android:textStyle="bold" />

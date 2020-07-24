@@ -67,6 +67,13 @@ class InfoPays : BaseFragment() {
             view?.let { it1 -> Navigation.findNavController(it1).navigate(action) }
 
         }
+        tweetbutton.setOnClickListener {
+            val action=InfoPaysDirections.actionInfoPaysToTweetsFragment()
+            action.pays=pays!!
+            view?.let { it1 -> Navigation.findNavController(it1).navigate(action) }
+
+        }
+
         var player : MediaPlayer? = null
         Hymnebutton.setOnClickListener {
             if (player == null || !player!!.isPlaying){

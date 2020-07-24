@@ -34,7 +34,7 @@ class VideosFragment : Fragment() {
             pays=VideosFragmentArgs.fromBundle(it).pays
         }
         countryCode = "DZ"
-        countryName = "algeria"
+        countryName = (pays!!.nom).toString()
 
         recyclerView.setHasFixedSize(true)
 
