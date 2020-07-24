@@ -1,5 +1,6 @@
 package com.example.projet
 
+
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -7,45 +8,45 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.example.geomob.Other.RequestHandler
 
 import com.example.projet.Adapters.VideoAdapter
-import com.example.projet.data.Pays
 import com.example.projet.data.PaysVideo
 
 import kotlinx.android.synthetic.main.fragment_videos.*
 
 class VideosFragment : Fragment() {
-    private var pays: Pays? =null
 
-    private var countryCode = ""
     private var countryName = ""
     var videoList = arrayListOf<PaysVideo>()
-
     lateinit var videoAdapter: VideoAdapter
     lateinit var layoutManager : LinearLayoutManager
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        arguments?.let {
-            pays=VideosFragmentArgs.fromBundle(it).pays
-        }
-        countryCode = "DZ"
-        countryName = (pays!!.nom).toString()
+    }
 
-        recyclerView.setHasFixedSize(true)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        var lay= inflater.inflate(R.layout.fragment_videos, container, false)
+        countryName = "algeria"
+        var video_list = lay.findViewById<RecyclerView>(R.id.video_list)
+        video_list.setHasFixedSize(true)
 
-        layoutManager = LinearLayoutManager(activity)
-        recyclerView.layoutManager = layoutManager
+        layoutManager = LinearLayoutManager(lay.context)
+        video_list.layoutManager = layoutManager
 
         videoAdapter = VideoAdapter(videoList)
-        recyclerView.adapter = videoAdapter
+        video_list.adapter = videoAdapter
 
 
-        val videoUrl = "https://www.googleapis.com/youtube/v3/search?key=AIzaSyBAZcxVrHs8w3EHcxlaE2H1ahtGxnzR-_E&q=$countryName&maxResults=4&type=video&safeSearch=strict&part=snippet"
+        val videoUrl = "https://www.googleapis.com/youtube/v3/search?key=AIzaSyDhMESOIxAizPhVQLD5Xi81VqI6QDjhaqo&q=$countryName&maxResults=5&type=video&safeSearch=strict&part=snippet"
         val jsonRequestVideos = JsonObjectRequest(
             Request.Method.GET, videoUrl, null,
             Response.Listener { response ->
@@ -55,7 +56,7 @@ class VideosFragment : Fragment() {
                     val video = items.getJSONObject(i)
                     val id = video.getJSONObject("id").getString("videoId")
                     val title = video.getJSONObject("snippet").getString("title")
-                    videoList.add(PaysVideo(id, title, countryCode))
+                    videoList.add(PaysVideo(id, title))
                 }
                 videoAdapter.notifyDataSetChanged()
             },
@@ -63,15 +64,8 @@ class VideosFragment : Fragment() {
                 Log.d("Error", "Request error")
 
             })
-
         RequestHandler.getInstance(requireActivity()).addToRequestQueue(jsonRequestVideos)
-    }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_videos, container, false)
+        return lay
     }
 }

@@ -26,10 +26,9 @@ class TweetsFragment() : Fragment() {
     var tweetList = arrayListOf<Tweet>()
     lateinit var tweetAdapter: TweetAdapter
     lateinit var layoutManager : LinearLayoutManager
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
     }
 
     override fun onCreateView(

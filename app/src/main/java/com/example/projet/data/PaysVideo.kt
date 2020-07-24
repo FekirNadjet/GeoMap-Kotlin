@@ -15,5 +15,5 @@ import com.example.projet.data.Pays
     )]
 )
 data class PaysVideo (@PrimaryKey val idPaysVideo: String,
-                      val title : String,
-                      val codePays : String) {}
+                      val title : String
+                      ) {}
