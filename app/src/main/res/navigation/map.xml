@@ -17,6 +17,12 @@
         <action
             android:id="@+id/info_pays"
             app:destination="@id/infoPays" />
+        <action
+            android:id="@+id/action_video"
+            app:destination="@id/videosFragment" />
+        <action
+            android:id="@+id/pays_action"
+            app:destination="@id/viewpage" />
     </fragment>
     <fragment
         android:id="@+id/detailPays"
@@ -39,6 +45,31 @@
         android:name="com.example.projet.InfoPays"
         android:label="fragment_info_pays"
         tools:layout="@layout/fragment_info_pays">
+    <argument
+        app:argType="com.example.projet.data.Pays"
+        android:name="Pays"
+        app:nullable="true"
+        android:defaultValue="@null" />
+        <action
+            android:id="@+id/info_video_action"
+            app:destination="@id/videosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/videosFragment"
+        android:name="com.example.projet.VideosFragment"
+        android:label="fragment_videos"
+        tools:layout="@layout/fragment_videos">
+    <argument
+        app:argType="com.example.projet.data.Pays"
+        android:name="Pays"
+        app:nullable="true"
+        android:defaultValue="@null" />
+    </fragment >
+    <fragment
+        android:id="@+id/viewpage"
+        android:name="com.example.projet.viewpage"
+        android:label="fragment_viewpage"
+        tools:layout="@layout/fragment_viewpage" >
     <argument
         app:argType="com.example.projet.data.Pays"
         android:name="Pays"

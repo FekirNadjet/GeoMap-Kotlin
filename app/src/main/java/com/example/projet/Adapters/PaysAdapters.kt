@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.projet.R
 import com.example.projet.data.Pays
 import com.example.projet.listePaysDirections
+import kotlinx.android.synthetic.main.fragment_info_pays.view.*
 import kotlinx.android.synthetic.main.item_layout.view.*
 
 class PaysAdapters (private val pays:List<Pays>): RecyclerView.Adapter<PaysAdapters.PaysViewHolder>() {
@@ -32,13 +33,19 @@ class PaysAdapters (private val pays:List<Pays>): RecyclerView.Adapter<PaysAdapt
         holder.view.countryCapitalView.text =pays.capital
         holder.view.countryFlagView.setImageResource(pays.drapeau)
         holder.view.arrowView.setOnClickListener{
+//            val action=listePaysDirections.actionVideo()
+//            Navigation.findNavController(it).navigate(action)
+
+//            val action=listePaysDirections.infoPays()
+//            action.pays=pays
+//            Navigation.findNavController(it).navigate(action)
+
             val action=listePaysDirections.infoPays()
             action.pays=pays
             Navigation.findNavController(it).navigate(action)
-//            val action= listePaysDirections.actionDetailPays()
-//            action.pays=position
-//            Navigation.findNavController(it).navigate(action)
+
         }
+
     }
     class PaysViewHolder(val view: View): RecyclerView.ViewHolder(view)
 

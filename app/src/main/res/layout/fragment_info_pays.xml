@@ -59,11 +59,31 @@
                         android:id="@+id/capitalPays"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+
                         android:layout_below="@id/nomPays"
                         android:layout_alignParentStart="true"
                         android:text="Algiers" />
-                </RelativeLayout>
 
+                    <Button
+                        android:id="@+id/videobutton"
+                        android:layout_width="80dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="154dp"
+                        android:layout_marginLeft="154dp"
+                        android:background="@android:color/transparent"
+                        android:text="Videos"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+                <Button
+                    android:id="@+id/Hymnebutton"
+                    android:layout_width="80dp"
+                    android:layout_height="50dp"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/transparent"
+                    android:text="Hymne"
+                    android:layout_alignParentEnd="true"
+                    android:textStyle="bold" />
 
             </RelativeLayout>
             <ViewFlipper
@@ -75,14 +95,15 @@
                 tools:layout_editor_absoluteX="4dp"
                 tools:ignore="MissingConstraints">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Description"
+                    android:textSize="18sp" />
             </ViewFlipper>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:fontFamily="@font/roboto_bold"
-                android:text="Description"
-                android:textSize="18sp" />
+
             <TextView
                 android:id="@+id/description"
                 android:layout_width="match_parent"

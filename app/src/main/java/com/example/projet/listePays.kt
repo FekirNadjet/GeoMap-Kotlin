@@ -45,10 +45,9 @@ class listePays : BaseFragment() {
         val res4 = Ressources( "Gold", "Algeria has many gold deposits within its borders.")
 
         val ressources1= listOf<Ressources>(res1,res2,res3,res4)
-        val tweets= listOf<Tweet>()
         val slideAlgerie= listOf<Int>(R.drawable.algerie1,R.drawable.algerie2,R.drawable.algerie3,R.drawable.algerie4)
         val descr="is a country in the Maghreb region of North Africa. The capital and most populous city is Algiers, located in the far north of the country on the Mediterranean coast. With an area of 2,381,741 square kilometres (919,595 sq mi), Algeria is the tenth-largest country in the world, and the largest by area in the African Union and the Arab world.[10] With an estimated population of over 44 million, it is the eighth-most populous country in Africa."
-        val dz = Pays("DZ","Algeria","Algiers", descr, 2381741, 42972878,histoires1,ressources1, R.drawable.algerie_drapeau, slideAlgerie,R.raw.algerie,tweets)
+        val dz = Pays("DZ","Algeria","Algiers", descr, 2381741, 42972878,histoires1,ressources1, R.drawable.algerie_drapeau, slideAlgerie,R.raw.algerie)
 
         val event6 = Historique( "Postwar growth and prosperity", "Shigeru Yoshida served as prime minister in 1946–1947 and 1948–1954, and played a key role in guiding Japan through the occupation.[292] His policies, known as the Yoshida Doctrine, proposed that Japan should forge a tight relationship with the United States and focus on developing the economy rather than pursuing a proactive foreign policy.[293] Yoshida was one of the longest serving prime ministers in Japanese history and the third-longest serving Prime Minister in Post-occupation Japan.[294] Yoshida's Liberal Party merged in 1955 into the new Liberal Democratic Party (LDP),[295] which went on to dominate Japanese politics for the remainder of the Shōwa period")
         val event4 = Historique( "Heisei period (1989–2019)", "Emperor Akihito's reign began upon the death of his father, Emperor Hirohito. The economic bubble popped in 1989, and stock and land prices plunged as Japan entered a deflationary spiral. Banks found themselves saddled with insurmountable debts that hindered economic recovery.[317] Stagnation worsened as the birthrate declined far below replacement level")
@@ -60,11 +59,11 @@ class listePays : BaseFragment() {
         val res6 = Ressources( "Mining and quarrying", "Mining for iron and copper essentially ceased after 2000, and Japan now imports virtually all its needs for those two ores.")
         val res7 = Ressources( "Power", "The largest single source of energy is oil;")
 
-        val ressources2= listOf<Ressources>(res1,res2,res3,res4)
+        val ressources2= listOf<Ressources>(res5,res6,res7)
         val slideJapon= listOf<Int>(R.drawable.japon1,R.drawable.japon2,R.drawable.japon3)
 
 
-        val jp = Pays("JP", "Japan", "Tokyo", "", 377975, 126150000,histoires2,ressources2, R.drawable.japon_drapeau,slideJapon,R.raw.suede,tweets)
+        val jp = Pays("JP", "Japan", "Tokyo", "", 377975, 126150000,histoires2,ressources2, R.drawable.japon_drapeau,slideJapon,R.raw.suede)
 
 
         var pays= listOf<Pays>(dz,jp)
@@ -77,15 +76,6 @@ class listePays : BaseFragment() {
                 list.adapter= PaysAdapters(pays)
             }
         }
-
-//        button_add.setOnClickListener{
-//
-//            //PaysDB(it).paysDao().addPays(dz)
-//                    val action=listePaysDirections.actionDetailPays()
-//                    Navigation.findNavController(it).navigate(action)
-//
-//        }
-
 
     }
 

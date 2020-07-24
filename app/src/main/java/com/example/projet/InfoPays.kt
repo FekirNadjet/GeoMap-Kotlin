@@ -1,11 +1,13 @@
 package com.example.projet
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.navigation.Navigation
 import com.example.projet.Adapters.HistoriqueAdapter
 import com.example.projet.Adapters.PaysAdapters
 import com.example.projet.Adapters.RessourcesAdapter
@@ -55,6 +57,24 @@ class InfoPays : BaseFragment() {
             context?.let {
                 list_Historique.adapter= HistoriqueAdapter(pays!!.historique)
                 list_Ressources.adapter=RessourcesAdapter(pays!!.ressources)
+            }
+        }
+        videobutton.setOnClickListener {
+            val action=InfoPaysDirections.infoVideoAction()
+            action.pays=pays!!
+            view?.let { it1 -> Navigation.findNavController(it1).navigate(action) }
+
+        }
+        var player : MediaPlayer? = null
+        Hymnebutton.setOnClickListener {
+            if (player == null || !player!!.isPlaying){
+                player = MediaPlayer.create(activity, pays!!.hymne)
+                player!!.start()
+
+            }else{
+                if (player != null && player!!.isPlaying){
+                    player!!.stop()
+                }
             }
         }
 
