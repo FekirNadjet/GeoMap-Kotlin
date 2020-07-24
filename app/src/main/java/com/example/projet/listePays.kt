@@ -47,7 +47,13 @@ class listePays : BaseFragment() {
         val ressources1= listOf<Ressources>(res1,res2,res3,res4)
         val slideAlgerie= listOf<Int>(R.drawable.algerie1,R.drawable.algerie2,R.drawable.algerie3,R.drawable.algerie4)
         val descr="is a country in the Maghreb region of North Africa. The capital and most populous city is Algiers, located in the far north of the country on the Mediterranean coast. With an area of 2,381,741 square kilometres (919,595 sq mi), Algeria is the tenth-largest country in the world, and the largest by area in the African Union and the Arab world.[10] With an estimated population of over 44 million, it is the eighth-most populous country in Africa."
-        val dz = Pays("DZ","Algeria","Algiers", descr, 2381741, 42972878,histoires1,ressources1, R.drawable.algerie_drapeau, slideAlgerie,R.raw.algerie)
+
+        val pers1 = personalities( "Abdelkader ibn Muhieddine", R.drawable.dz_aek)
+        val pers2 = personalities( "Houari Boumédiène", R.drawable.dz_bmd)
+        val pers3 = personalities( "Larbi Ben M'hidi", R.drawable.dz_arbi)
+
+        var pers= listOf<personalities>(pers1,pers2,pers3)
+        val dz = Pays("DZ","Algeria","Algiers", descr, 2381741, 42972878,histoires1,ressources1, R.drawable.algerie_drapeau, slideAlgerie,R.raw.algerie,pers)
 
         val event6 = Historique( "Postwar growth and prosperity", "Shigeru Yoshida served as prime minister in 1946–1947 and 1948–1954, and played a key role in guiding Japan through the occupation.[292] His policies, known as the Yoshida Doctrine, proposed that Japan should forge a tight relationship with the United States and focus on developing the economy rather than pursuing a proactive foreign policy.[293] Yoshida was one of the longest serving prime ministers in Japanese history and the third-longest serving Prime Minister in Post-occupation Japan.[294] Yoshida's Liberal Party merged in 1955 into the new Liberal Democratic Party (LDP),[295] which went on to dominate Japanese politics for the remainder of the Shōwa period")
         val event4 = Historique( "Heisei period (1989–2019)", "Emperor Akihito's reign began upon the death of his father, Emperor Hirohito. The economic bubble popped in 1989, and stock and land prices plunged as Japan entered a deflationary spiral. Banks found themselves saddled with insurmountable debts that hindered economic recovery.[317] Stagnation worsened as the birthrate declined far below replacement level")
@@ -62,8 +68,12 @@ class listePays : BaseFragment() {
         val ressources2= listOf<Ressources>(res5,res6,res7)
         val slideJapon= listOf<Int>(R.drawable.japon1,R.drawable.japon2,R.drawable.japon3)
 
+        val descr2="Japan is the 11th most populous country in the world, as well as one of the most densely populated and urbanized. About three-fourths of the country's terrain is mountainous, concentrating its population of 126.2 million on narrow coastal plains. Japan is administratively divided into 47 prefectures and traditionally divided into eight regions. The Greater Tokyo Area is the most populous metropolitan area in the world, with more than 37.4 million residents."
+        val pers4 = personalities( "Ken Watanabe", R.drawable.jp_ken)
+        val pers5 = personalities( "Satoshi Kon", R.drawable.jp_satoshi)
+        var per= listOf<personalities>(pers4,pers5)
 
-        val jp = Pays("JP", "Japan", "Tokyo", "", 377975, 126150000,histoires2,ressources2, R.drawable.japon_drapeau,slideJapon,R.raw.suede)
+        val jp = Pays("JP", "Japan", "Tokyo", descr2, 377975, 126150000,histoires2,ressources2, R.drawable.japon_drapeau,slideJapon,R.raw.suede,per)
 
 
         var pays= listOf<Pays>(dz,jp)

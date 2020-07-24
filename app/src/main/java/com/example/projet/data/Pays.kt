@@ -16,7 +16,8 @@ data class Pays(
             var ressources:List<Ressources>,
             var drapeau: Int,
             var images:List<Int>,
-            var hymne:Int
+            var hymne:Int,
+            var personnalite:List<personalities>
             ) :Serializable{
     @PrimaryKey(autoGenerate = true)
     var id:Int=0

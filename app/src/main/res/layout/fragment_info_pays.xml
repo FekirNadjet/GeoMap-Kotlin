@@ -101,6 +101,7 @@
                     android:layout_margin="5dp"
                     android:fontFamily="@font/roboto_bold"
                     android:text="Description"
+                    android:textColor="#848ccf"
                     android:textSize="18sp" />
             </ViewFlipper>
 
@@ -151,6 +152,23 @@
                 android:text="TextView"
                 android:textColor="#898989"
                 android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Public figure"
+                android:textColor="@color/title"
+                android:textSize="18sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/list_figures"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                />
 
             <TextView
                 android:layout_width="match_parent"

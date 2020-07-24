@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.navigation.Navigation
+import com.example.projet.Adapters.FigureAdapter
 import com.example.projet.Adapters.HistoriqueAdapter
 import com.example.projet.Adapters.PaysAdapters
 import com.example.projet.Adapters.RessourcesAdapter
@@ -57,6 +58,7 @@ class InfoPays : BaseFragment() {
             context?.let {
                 list_Historique.adapter= HistoriqueAdapter(pays!!.historique)
                 list_Ressources.adapter=RessourcesAdapter(pays!!.ressources)
+                list_figures.adapter=FigureAdapter(pays!!.personnalite)
             }
         }
         videobutton.setOnClickListener {
